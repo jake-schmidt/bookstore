@@ -1,8 +1,12 @@
 <h1>Books</h1>
 
-<p>
-  <a class="float-right btn btn-primary" href="/books/new">Add a New Book</a>
-<p>
+<% if session["user_id"] != nil %>
+
+  <p>
+    <a class="float-right btn btn-primary" href="/books/new">Add a New Book</a>
+  <p>
+
+<% end %>
 
 <ul>
   <% for book in Book.all %>

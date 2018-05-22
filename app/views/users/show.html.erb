@@ -1,0 +1,9 @@
+<h1>My Account</h1>
+
+<% if session["user_id"] != nil %>
+    <% current_user = User.find_by(id: params["id"]) %>
+
+    <p>Email: <%= current_user.email %></p>
+    <p>Password: <%= current_user.password %></p>
+    
+<% end %>

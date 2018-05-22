@@ -1,5 +1,11 @@
 class SessionsController < ApplicationController
     
+  def destroy
+    # session["user_id"] = nil
+    reset_session
+    redirect_to "/", notice: "See ya!"
+  end
+    
   def new
     
   end
@@ -9,7 +15,7 @@ class SessionsController < ApplicationController
     if user == nil
       redirect_to "/", notice: "Please sign up first."
     else
-      if user.password == params["password"]
+      if user.authenticate(params["password"])
         session["user_id"] = user.id
         redirect_to "/", notice: "Hello, #{user.name}"
       else

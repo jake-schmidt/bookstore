@@ -39,6 +39,12 @@
             <li class="nav-item">
               Hello <%= User.find_by(id: session["user_id"]).name %>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Sign Out</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/<%= session["user_id"] %>">My Account</a>
+            </li>
           <% end %>
         </ul>
       </div>

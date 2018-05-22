@@ -15,7 +15,9 @@ class BooksController < ApplicationController
   end
 
   def new
-
+    if session["user_id"] == nil
+      redirect_to "/", notice: "Nice try."
+    end
   end
 
   def create
