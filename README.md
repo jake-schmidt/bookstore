@@ -15,3 +15,4 @@ First, delete your existing "bookstore" folder.
 
 Then start the server as usual.
 
+# bookstore
